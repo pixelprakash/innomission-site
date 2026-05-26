@@ -1,0 +1,59 @@
+/* ═══════════════════════════════════════════════
+   INNOMISSION DESIGN TOKENS
+   Central design system — colors, spacing, typography
+   ═══════════════════════════════════════════════ */
+
+:root {
+  /* ── Colors ── */
+  --color-ink: #0B0D17;
+  --color-white: #FFFFFF;
+  --color-cream: #F7F5F0;
+  --color-coral: #FF4D4D;
+  --color-electric: #3B5CFF;
+  --color-mint: #00D4AA;
+  --color-amber: #FFB830;
+  --color-lavender: #C4B5FD;
+  --color-blush: #FFE0E6;
+  --color-slate: #64748B;
+  --color-light-gray: #E8E6E1;
+  --color-electric-dark: #2A4BE0;
+
+  /* ── Typography ── */
+  --font-display: 'DM Sans', 'Instrument Sans', -apple-system, sans-serif;
+  --font-body: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ── Spacing ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 120px;
+
+  /* ── Layout ── */
+  --max-width: 1280px;
+  --page-padding: clamp(16px, 4vw, 48px);
+  --nav-height: 72px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 24px;
+
+  /* ── Transitions ── */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.8s;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(11, 13, 23, 0.04);
+  --shadow-md: 0 8px 24px rgba(11, 13, 23, 0.08);
+  --shadow-lg: 0 20px 48px rgba(11, 13, 23, 0.08);
+  --shadow-xl: 0 32px 64px rgba(11, 13, 23, 0.12);
+  --shadow-electric: 0 12px 32px rgba(59, 92, 255, 0.25);
+  --shadow-ink: 0 12px 32px rgba(11, 13, 23, 0.2);
+}
