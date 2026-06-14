@@ -336,7 +336,7 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: var(--space-2xl);
   margin-bottom: var(--space-3xl);
 }
@@ -539,11 +539,13 @@
 
 @media (max-width: 900px) {
   .grid-2,
-  .service-detail {
+  .service-detail,
+  .blog-series-row {
     grid-template-columns: 1fr;
   }
   .service-detail .service-text { order: 1; }
   .service-detail .service-illust { order: 2; }
+  .blog-series-row > div { order: unset !important; }
   .hero-illustration { display: none; }
   .cta-banner {
     grid-template-columns: 1fr;

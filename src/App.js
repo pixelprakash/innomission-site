@@ -8,6 +8,7 @@ const HomePage = lazy(() => import('./pages/Home'));
 const ServicesPage = lazy(() => import('./pages/Services'));
 const ProgramsPage = lazy(() => import('./pages/Programs'));
 const AboutPage = lazy(() => import('./pages/About'));
+const BlogsPage = lazy(() => import('./pages/Blogs'));
 const ContactPage = lazy(() => import('./pages/Contact'));
 
 /* ── ScrollToTop — reset scroll position on route change ── */
@@ -67,6 +68,7 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Suspense>

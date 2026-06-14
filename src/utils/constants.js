@@ -22,6 +22,7 @@ export const NAV_ITEMS = [
   { id: 'services', label: 'Services', path: '/services' },
   { id: 'programs', label: 'Programs', path: '/programs' },
   { id: 'about', label: 'About', path: '/about' },
+  { id: 'blogs', label: 'Blogs', path: '/blogs' },
   { id: 'contact', label: 'Contact', path: '/contact' },
 ];
 
@@ -198,38 +199,58 @@ export const PROCESS_STEPS = [
 
 export const FOOTER_COLUMNS = [
   {
-    title: 'Services',
+    title: 'Quick Links',
     items: [
-      { label: 'Training', path: '/services' },
-      { label: 'Mentorship', path: '/services' },
-      { label: 'Partnerships', path: '/services' },
-      { label: 'Consulting', path: '/services' },
-    ],
-  },
-  {
-    title: 'Programs',
-    items: [
-      { label: 'Leadership Bootcamp', path: '/programs' },
-      { label: 'Design Sprint', path: '/programs' },
-      { label: 'Startup Launchpad', path: '/programs' },
-      { label: 'Certification', path: '/programs' },
-    ],
-  },
-  {
-    title: 'Company',
-    items: [
-      { label: 'About', path: '/about' },
+      { label: 'Home', path: '/' },
+      { label: 'About Us', path: '/about' },
+      { label: 'Services', path: '/services' },
+      { label: 'Blogs', path: '/blogs' },
       { label: 'Contact', path: '/contact' },
-      { label: 'Blog', path: '/' },
-      { label: 'Careers', path: '/' },
+    ],
+  },
+  {
+    title: 'Contact',
+    items: [
+      { label: 'helloinnomission@gmail.com', path: '/contact' },
+      { label: 'WhatsApp', path: '/contact' },
     ],
   },
 ];
 
 export const CONTACT_INFO = [
-  { label: 'Email', value: 'contact@innomission.in', icon: '✉' },
+  { label: 'Email', value: 'helloinnomission@gmail.com', icon: '✉' },
   { label: 'Location', value: 'Hyderabad, Telangana, India', icon: '📍' },
-  { label: 'Social', value: 'LinkedIn · Twitter · Instagram', icon: '🔗' },
+  { label: 'Social', value: 'LinkedIn · YouTube · Instagram', icon: '🔗' },
+];
+
+export const SOCIAL_LINKS = {
+  linkedin: 'https://www.linkedin.com/in/innomission-397b6438a/',
+  youtube: 'https://www.youtube.com/@Inno_mission',
+  instagram: 'https://www.instagram.com/inno_mission/',
+};
+
+export const YOUTUBE_SERIES = [
+  {
+    title: 'Voices of Innovations',
+    desc: 'In-depth conversations with industry experts and thought leaders sharing their innovation journeys, insights, and lessons learned. Discover the stories behind successful innovations and gain valuable perspectives from those who\'ve shaped the future.',
+    topics: ['Expert Insights', 'Innovation Case Studies', 'Industry Trends', 'Leadership Lessons'],
+    embedUrl: 'https://www.youtube.com/embed/videoseries?list=PLBOGkjVPZGkWlBFtMYPa2kMmcCr2Pz9gm',
+    color: COLORS.electric,
+  },
+  {
+    title: 'Future Innovators',
+    desc: 'Showcasing the next generation of innovators, entrepreneurs, and change-makers. Watch emerging talents share their ideas, projects, and aspirations as they embark on their innovation journeys and build tomorrow\'s solutions.',
+    topics: ['Student Innovations', 'Startup Stories', 'Young Entrepreneurs', 'Fresh Perspectives'],
+    embedUrl: 'https://www.youtube.com/embed/videoseries?list=PLBOGkjVPZGkWlBFtMYPa2kMmcCr2Pz9gm',
+    color: COLORS.coral,
+  },
+  {
+    title: 'International Conference ServDes 2025',
+    desc: 'Highlights and presentations from the International Service Design Conference 2025. Explore cutting-edge research, case studies, and discussions on service design, innovation methodologies, and design thinking from global experts and academics.',
+    topics: ['Service Design', 'Academic Research', 'Global Insights', 'Conference Talks'],
+    embedUrl: 'https://www.youtube.com/embed/videoseries?list=PLBOGkjVPZGkWnqFmCMeNqxFfvqMlrUJVM',
+    color: COLORS.lavender,
+  },
 ];
 
 export const INTEREST_OPTIONS = [
