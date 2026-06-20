@@ -5,6 +5,7 @@ import { COLORS } from './utils/constants';
 
 /* ── Lazy-loaded pages (code splitting) ── */
 const HomePage = lazy(() => import('./pages/Home'));
+const HackathonPage = lazy(() => import('./pages/Hackathon'));
 const ServicesPage = lazy(() => import('./pages/Services'));
 const ProgramsPage = lazy(() => import('./pages/Programs'));
 const AboutPage = lazy(() => import('./pages/About'));
@@ -65,6 +66,7 @@ export default function App() {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/hackathon" element={<HackathonPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/about" element={<AboutPage />} />

@@ -1,4 +1,5 @@
 export { default as HomePage } from './Home';
+export { default as HackathonPage } from './Hackathon';
 export { default as ServicesPage } from './Services';
 export { default as ProgramsPage } from './Programs';
 export { default as AboutPage } from './About';

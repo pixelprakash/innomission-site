@@ -18,6 +18,7 @@ export const COLORS = {
 };
 
 export const NAV_ITEMS = [
+  { id: 'hackathon', label: 'Hackathon', path: '/hackathon' },
   { id: 'home', label: 'Home', path: '/' },
   { id: 'services', label: 'Services', path: '/services' },
   { id: 'programs', label: 'Programs', path: '/programs' },
