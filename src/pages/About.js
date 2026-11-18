@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatedSection } from '../components';
-import { ABOUT_VALUES, PROCESS_STEPS, COLORS } from '../utils/constants';
+import { ABOUT_VALUES, PROCESS_STEPS, COLORS, TEAM, initialsOf } from '../utils/constants';
 
 const AboutPage = memo(() => (
   <main id="main-content" role="main">
@@ -189,6 +189,51 @@ const AboutPage = memo(() => (
             </svg>
           </AnimatedSection>
         </div>
+      </div>
+    </section>
+
+    {/* ── Team ── */}
+    <section className="section-padding" aria-labelledby="team-heading" style={{ background: 'var(--color-white)' }}>
+      <div className="container">
+        <AnimatedSection>
+          <h2 id="team-heading" className="heading-lg" style={{ textAlign: 'center', marginBottom: 12 }}>
+            Meet Our <span style={{ color: COLORS.electric }}>Team</span>
+          </h2>
+          <h3 className="heading-sm" style={{ textAlign: 'center', marginBottom: 48 }}>Advisory Board</h3>
+        </AnimatedSection>
+        <ul className="grid-3" style={{ listStyle: 'none' }}>
+          {TEAM.advisory.map((m, i) => (
+            <li key={m.name}>
+              <AnimatedSection delay={(i % 3) * 0.1} style={{ height: '100%' }}>
+                <article
+                  className="card"
+                  style={{ background: 'var(--color-white)', border: '1px solid var(--color-light-gray)', boxShadow: 'var(--shadow-md)', padding: 28, textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}
+                >
+                  <div
+                    aria-hidden={m.photo ? undefined : 'true'}
+                    style={{ width: 88, height: 88, borderRadius: '50%', overflow: 'hidden', display: 'grid', placeItems: 'center', background: `linear-gradient(135deg, ${COLORS.electric}, #7C3AED)`, color: COLORS.white, fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: 28 }}
+                  >
+                    {m.photo ? <img src={m.photo} alt={m.name} loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : initialsOf(m.name)}
+                  </div>
+                  <h4 className="heading-sm" style={{ fontSize: 20 }}>{m.name}</h4>
+                  {m.url && (
+                    <a
+                      href={m.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-electric"
+                      style={{ width: '100%', marginTop: 'auto', padding: '14px 24px' }}
+                      aria-label={`Connect with ${m.name} (opens in a new tab)`}
+                    >
+                      Connect
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M9 2h5v5M14 2L7 9M12 10v3a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1h3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </a>
+                  )}
+                </article>
+              </AnimatedSection>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
 

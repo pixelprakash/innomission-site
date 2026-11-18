@@ -9,7 +9,7 @@ export const RD_NAV = [
     label: 'Services',
     path: '/services',
     intro: 'Innovation capability for institutions',
-    blurb: 'Training, mentorship, partnerships and consulting — designed with your context, not around a template.',
+    blurb: 'Training, product and UX, partnerships and entrepreneurship support — designed with your context, not around a template.',
     links: SERVICES.map((s) => ({ label: s.title, path: '/services#' + slug(s.title), desc: s.shortDesc })),
     cta: { label: 'All services', path: '/services' },
   },
@@ -40,6 +40,7 @@ export const RD_NAV = [
     links: [
       { label: 'Our mission & values', path: '/about#mission', desc: 'What we stand for' },
       { label: 'How we work', path: '/about#process', desc: 'Our four-step approach' },
+      { label: 'Our team', path: '/about#team', desc: 'Advisory board' },
       { label: 'Partners', path: '/about#partners', desc: 'Institutions we work alongside' },
     ],
     cta: { label: 'Our story', path: '/about' },
@@ -66,14 +67,14 @@ export const RD_FOOTER = [
     links: [
       { label: 'Programs & courses', path: '/programs' },
       { label: 'Innovation training', path: '/services#innovation-training' },
-      { label: 'Startup mentorship', path: '/services#startup-mentorship' },
+      { label: 'Product & UX consulting', path: '/services#product-ux-consulting' },
     ],
   },
   {
     title: 'Partner',
     links: [
       { label: 'Strategic partnerships', path: '/services#strategic-partnerships' },
-      { label: 'Innovation consulting', path: '/services#innovation-consulting' },
+      { label: 'Entrepreneurship support', path: '/services#entrepreneurship-support' },
       { label: 'Work with us', path: '/contact' },
     ],
   },

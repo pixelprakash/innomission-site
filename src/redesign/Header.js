@@ -110,22 +110,27 @@ export default function Header() {
           <ul>
             {RD_NAV.map((item) => (
               <li key={item.id} onMouseEnter={() => (item.links ? hoverOpen(item.id) : setOpenId(null))}>
-                {item.links ? (
-                  <button
-                    type="button"
-                    className={`rd-nav__item ${openId === item.id ? 'is-open' : ''} ${location.pathname.startsWith(item.path) ? 'is-active' : ''}`}
-                    aria-expanded={openId === item.id}
-                    aria-controls={`rd-panel-${item.id}`}
-                    onClick={() => setOpenId(item.id)}
+                <div className={`rd-nav__group ${openId === item.id ? 'is-open' : ''}`}>
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) => `rd-nav__link ${item.links ? 'has-menu' : ''} ${isActive ? 'is-active' : ''}`}
+                    onClick={() => setOpenId(null)}
                   >
                     {item.label}
-                    <Chevron dir="down" size={9} />
-                  </button>
-                ) : (
-                  <NavLink to={item.path} className={({ isActive }) => `rd-nav__item ${isActive ? 'is-active' : ''}`}>
-                    {item.label}
                   </NavLink>
-                )}
+                  {item.links && (
+                    <button
+                      type="button"
+                      className="rd-nav__toggle"
+                      aria-expanded={openId === item.id}
+                      aria-controls={`rd-panel-${item.id}`}
+                      aria-label={`${item.label} submenu`}
+                      onClick={() => setOpenId(openId === item.id ? null : item.id)}
+                    >
+                      <Chevron dir="down" size={9} />
+                    </button>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
@@ -181,28 +186,26 @@ export default function Header() {
           <ul>
             {RD_NAV.map((item) => (
               <li key={item.id}>
-                {item.links ? (
-                  <>
+                <div className="rd-mobile__rowwrap">
+                  <Link to={item.path} className="rd-mobile__row" onClick={closeAll}>{item.label}</Link>
+                  {item.links && (
                     <button
                       type="button"
-                      className="rd-mobile__row"
+                      className="rd-mobile__toggle"
                       aria-expanded={mobileSection === item.id}
+                      aria-label={`${item.label} submenu`}
                       onClick={() => setMobileSection(mobileSection === item.id ? null : item.id)}
                     >
-                      {item.label}
                       <Chevron dir={mobileSection === item.id ? 'up' : 'down'} size={12} />
                     </button>
-                    {mobileSection === item.id && (
-                      <ul className="rd-mobile__sub">
-                        <li><Link to={item.path}>{item.cta.label}</Link></li>
-                        {item.links.map((l) => (
-                          <li key={l.label}><Link to={l.path}>{l.label}</Link></li>
-                        ))}
-                      </ul>
-                    )}
-                  </>
-                ) : (
-                  <Link to={item.path} className="rd-mobile__row">{item.label}</Link>
+                  )}
+                </div>
+                {item.links && mobileSection === item.id && (
+                  <ul className="rd-mobile__sub">
+                    {item.links.map((l) => (
+                      <li key={l.label}><Link to={l.path} onClick={closeAll}>{l.label}</Link></li>
+                    ))}
+                  </ul>
                 )}
               </li>
             ))}

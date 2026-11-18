@@ -74,14 +74,15 @@ const serviceIcons = {
       <rect x="55" y="44" width="10" height="3" rx="1.5" fill={COLORS.ink} />
     </g>
   ),
-  mentorship: (color1, color2) => (
-    <g transform="translate(15, 15)">
-      <circle cx="25" cy="20" r="15" fill={color1} />
-      <circle cx="55" cy="25" r="12" fill={color2} />
-      <path d="M25 35 Q40 50 55 37" stroke={COLORS.ink} strokeWidth="2.5" strokeDasharray="4 3" fill="none" />
-      <path d="M15 55 L25 45 L35 55" stroke={color1} strokeWidth="3" fill="none" />
-      <circle cx="25" cy="17" r="4" fill={COLORS.white} />
-      <circle cx="55" cy="22" r="3" fill={COLORS.white} />
+  product: (color1, color2) => (
+    <g transform="translate(12, 14)">
+      <rect x="2" y="6" width="52" height="40" rx="6" fill={COLORS.white} stroke={COLORS.ink} strokeWidth="2" />
+      <rect x="2" y="6" width="52" height="11" rx="6" fill={color1} />
+      <rect x="9" y="24" width="18" height="15" rx="3" fill={color1} opacity="0.3" />
+      <rect x="32" y="24" width="16" height="3" rx="1.5" fill={COLORS.ink} />
+      <rect x="32" y="31" width="12" height="3" rx="1.5" fill={COLORS.ink} opacity="0.5" />
+      <path d="M62 30 L55 37 L62 44" stroke={COLORS.ink} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M52 8 L54.4 14 L60.4 16.4 L54.4 18.8 L52 24.8 L49.6 18.8 L43.6 16.4 L49.6 14 Z" fill={color2} transform="translate(8,-6)" />
     </g>
   ),
   partnership: (color1, color2) => (
@@ -94,14 +95,13 @@ const serviceIcons = {
       <path d="M15 60 Q32 70 50 60" stroke={COLORS.mint} strokeWidth="2.5" fill="none" />
     </g>
   ),
-  consulting: (color1, color2) => (
-    <g transform="translate(15, 15)">
-      <rect x="5" y="10" width="55" height="45" rx="8" fill={color1} opacity="0.2" />
-      <circle cx="20" cy="30" r="10" fill={color1} />
-      <circle cx="45" cy="25" r="8" fill={color2} />
-      <path d="M5 55 Q32 40 60 55" stroke={COLORS.ink} strokeWidth="2" fill="none" />
-      <rect x="15" y="45" width="35" height="3" rx="1.5" fill={COLORS.ink} />
-      <rect x="20" y="51" width="25" height="3" rx="1.5" fill={COLORS.ink} opacity="0.5" />
+  entrepreneurship: (color1, color2) => (
+    <g transform="translate(14, 10)">
+      <path d="M30 4 C44 10 50 26 46 44 L30 54 L14 44 C10 26 16 10 30 4 Z" fill={color1} />
+      <circle cx="30" cy="26" r="7" fill={COLORS.white} stroke={COLORS.ink} strokeWidth="2" />
+      <path d="M14 44 L4 56 L18 52 Z" fill={color2} />
+      <path d="M46 44 L56 56 L42 52 Z" fill={color2} />
+      <path d="M24 56 Q30 70 36 56" stroke={COLORS.ink} strokeWidth="2.5" strokeLinecap="round" fill="none" />
     </g>
   ),
 };
@@ -131,18 +131,25 @@ export const TrainingIllustration = memo(() => (
   </svg>
 ));
 
-export const MentorshipIllustration = memo(() => (
+export const ProductIllustration = memo(() => (
   <svg viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg"
-    role="img" aria-label="Mentorship illustration"
+    role="img" aria-label="Product design and engineering illustration"
     style={{ width: '100%', maxWidth: 300 }}>
-    <circle cx="100" cy="100" r="60" fill={COLORS.coral} opacity="0.15" />
-    <circle cx="200" cy="120" r="50" fill={COLORS.amber} opacity="0.15" />
-    <circle cx="100" cy="90" r="25" fill={COLORS.coral} />
-    <circle cx="100" cy="72" r="14" fill={COLORS.amber} />
-    <circle cx="200" cy="110" r="20" fill={COLORS.amber} />
-    <circle cx="200" cy="95" r="11" fill={COLORS.coral} />
-    <path d="M125 90 Q150 70 180 110" stroke={COLORS.ink} strokeWidth="2.5" strokeDasharray="6 4" fill="none" />
-    <path d="M80 160 L120 140 L180 155 L220 140" stroke={COLORS.mint} strokeWidth="3" fill="none" strokeLinecap="round" />
+    <rect x="30" y="35" width="240" height="170" rx="14" fill={COLORS.coral} opacity="0.12" />
+    <rect x="52" y="55" width="196" height="125" rx="10" fill={COLORS.white} stroke={COLORS.ink} strokeWidth="2" />
+    <rect x="52" y="55" width="196" height="22" rx="10" fill={COLORS.coral} />
+    <circle cx="66" cy="66" r="3.5" fill={COLORS.white} />
+    <circle cx="78" cy="66" r="3.5" fill={COLORS.white} opacity="0.7" />
+    <circle cx="90" cy="66" r="3.5" fill={COLORS.white} opacity="0.5" />
+    <rect x="66" y="92" width="64" height="48" rx="6" fill={COLORS.coral} opacity="0.25" />
+    <rect x="142" y="94" width="90" height="8" rx="4" fill={COLORS.ink} />
+    <rect x="142" y="110" width="70" height="8" rx="4" fill={COLORS.ink} opacity="0.5" />
+    <rect x="142" y="126" width="80" height="8" rx="4" fill={COLORS.ink} opacity="0.3" />
+    <rect x="66" y="150" width="166" height="16" rx="8" fill={COLORS.amber} opacity="0.5" />
+    <path d="M262 120 L248 134 L262 148" stroke={COLORS.ink} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M38 120 L52 134 L38 148" stroke={COLORS.ink} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity="0.0" />
+    <path d="M236 22 L242 38 L258 44 L242 50 L236 66 L230 50 L214 44 L230 38 Z" fill={COLORS.amber} />
+    <path d="M60 205 Q150 225 240 205" stroke={COLORS.mint} strokeWidth="3" strokeLinecap="round" fill="none" />
   </svg>
 ));
 
@@ -164,18 +171,20 @@ export const PartnershipIllustration = memo(() => (
   </svg>
 ));
 
-export const ConsultingIllustration = memo(() => (
+export const EntrepreneurshipIllustration = memo(() => (
   <svg viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg"
-    role="img" aria-label="Consulting strategy illustration"
+    role="img" aria-label="Entrepreneurship and launch illustration"
     style={{ width: '100%', maxWidth: 300 }}>
-    <rect x="40" y="50" width="220" height="140" rx="12" fill={COLORS.amber} opacity="0.1" />
-    <rect x="60" y="80" width="60" height="80" rx="6" fill={COLORS.amber} />
-    <rect x="130" y="100" width="60" height="60" rx="6" fill={COLORS.coral} />
-    <rect x="200" y="70" width="40" height="90" rx="6" fill={COLORS.electric} />
-    <path d="M70 170 L90 130 L120 150 L160 110 L200 90 L230 70" stroke={COLORS.ink} strokeWidth="2.5" fill="none" strokeLinecap="round" />
-    <circle cx="90" cy="130" r="4" fill={COLORS.ink} />
-    <circle cx="160" cy="110" r="4" fill={COLORS.ink} />
-    <circle cx="230" cy="70" r="4" fill={COLORS.ink} />
+    <circle cx="150" cy="130" r="86" fill={COLORS.amber} opacity="0.14" />
+    <path d="M150 38 C190 56 206 100 196 150 L150 178 L104 150 C94 100 110 56 150 38 Z" fill={COLORS.amber} />
+    <circle cx="150" cy="104" r="20" fill={COLORS.white} stroke={COLORS.ink} strokeWidth="3" />
+    <path d="M104 150 L76 186 L112 172 Z" fill={COLORS.coral} />
+    <path d="M196 150 L224 186 L188 172 Z" fill={COLORS.coral} />
+    <path d="M132 184 Q150 226 168 184" stroke={COLORS.coral} strokeWidth="6" strokeLinecap="round" fill="none" />
+    <circle cx="62" cy="70" r="5" fill={COLORS.mint} />
+    <circle cx="246" cy="92" r="4" fill={COLORS.electric} />
+    <circle cx="232" cy="52" r="3" fill={COLORS.ink} />
+    <path d="M40 200 Q150 170 260 200" stroke={COLORS.ink} strokeWidth="2" strokeDasharray="5 5" fill="none" opacity="0.4" />
   </svg>
 ));
 
@@ -189,7 +198,7 @@ export const QuoteMark = memo(() => (
 // Map service type to full illustration component
 export const SERVICE_ILLUSTRATIONS = {
   training: TrainingIllustration,
-  mentorship: MentorshipIllustration,
+  product: ProductIllustration,
   partnership: PartnershipIllustration,
-  consulting: ConsultingIllustration,
+  entrepreneurship: EntrepreneurshipIllustration,
 };

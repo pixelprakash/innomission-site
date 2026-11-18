@@ -27,15 +27,31 @@ export default function Services() {
             <Reveal className="rd-split__text">
               <h2 className="rd-h2">{s.fullTitle}</h2>
               <p className="rd-body">{s.fullDesc}</p>
-              <ul className="rd-checklist">
-                {s.features.map((f) => <li key={f}>{f}</li>)}
-              </ul>
+              {!s.groups && (
+                <ul className="rd-checklist">
+                  {s.features.map((f) => <li key={f}>{f}</li>)}
+                </ul>
+              )}
               <Button to="/contact">Enquire about this service<span className="sr-only">: {s.title}</span></Button>
             </Reveal>
             <Reveal delay={0.1} className="rd-split__media">
-              <Media slot={`service-${['training', 'mentorship', 'partnership', 'consulting'][i]}`} alt="" ratio="4 / 3" tone={TONES[i]} />
+              <Media slot={`service-${['training', 'product', 'partnership', 'entrepreneurship'][i]}`} alt="" ratio="4 / 3" tone={TONES[i]} />
             </Reveal>
           </div>
+          {s.groups && (
+            <div className="rd-wrap">
+              <div className="rd-groups">
+                {s.groups.map((g, gi) => (
+                  <Reveal key={g.title} delay={gi * 0.06}>
+                    <section className="rd-group" aria-label={g.title}>
+                      <h3>{g.title}</h3>
+                      <ul>{g.items.map((it) => <li key={it}>{it}</li>)}</ul>
+                    </section>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       ))}
 

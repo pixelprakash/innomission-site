@@ -32,9 +32,9 @@ export const MEDIA = {
   about: '/media/about.jpg',
   contact: '/media/contact.jpg',
   'service-training': '/media/service-training.jpg',
-  'service-mentorship': '/media/service-mentorship.jpg',
+  'service-product': '/media/service-product.jpg',
   'service-partnership': '/media/service-partnership.jpg',
-  'service-consulting': '/media/service-consulting.jpg',
+  'service-entrepreneurship': '/media/service-entrepreneurship.jpg',
 };
 
 
@@ -61,7 +61,7 @@ export const STOCK = {
   'pillar-implement': { src: u('photo-1716703742352-0bbdb45f505b'), pos: '50% 45%' },        // young founders and teams putting ideas to work
   about: { src: u('photo-1750834115164-8c2658f18dd0', 1600), pos: '50% 55%' },       // Charminar, Hyderabad — where InnoMission began
   'service-training': { src: u('photo-1587440871875-191322ee64b0'), pos: '50% 50%' },    // design-thinking hands-on sketching
-  'service-mentorship': { src: u('photo-1672487729377-210da0b40bc0'), pos: '50% 40%' }, // two young professionals in warm conversation
+  'service-product': { src: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1400', pos: '50% 50%' }, // hand-drawn UX wireframes (Pexels)
   'service-partnership': { src: u('photo-1776248783518-400b6d0da64c'), pos: '50% 35%' },// delegation from institutions — partnership
-  'service-consulting': { src: u('photo-1624259458752-a2c5922abea0'), pos: '50% 50%' }, // strategy canvas
+  'service-entrepreneurship': { src: u('photo-1624259458752-a2c5922abea0'), pos: '50% 50%' }, // business-model canvas
 };

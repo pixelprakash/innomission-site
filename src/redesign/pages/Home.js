@@ -8,7 +8,7 @@ import HeroArt from '../HeroArt';
 const PILLARS = [
   { id: 'inspire', title: 'Inspire', text: 'Spark new mindsets through stories, conversations and ideas from innovators — shared across our videos, reels and posts.', cta: 'Explore our insights', to: '/insights', tone: 'coral' },
   { id: 'innovate', title: 'Innovate', text: 'Turn ideas into solutions through design thinking, hands-on workshops and mentorship that build real capability.', cta: 'View our programs', to: '/programs', tone: 'mint' },
-  { id: 'implement', title: 'Implement', text: 'Take solutions into the real world with strategic partnerships, consulting and ecosystem support that lasts.', cta: 'See our services', to: '/services', tone: 'plum' },
+  { id: 'implement', title: 'Implement', text: 'Take solutions into the real world with strategic partnerships, entrepreneurship support and ecosystem building that lasts.', cta: 'See our services', to: '/services', tone: 'plum' },
 ];
 
 export default function Home() {

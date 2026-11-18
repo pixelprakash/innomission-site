@@ -48,12 +48,18 @@ export const SERVICES = [
     bg: COLORS.blush,
   },
   {
-    icon: 'mentorship',
-    title: 'Startup Mentorship',
-    shortDesc: 'From first idea to product-market fit. Our mentors bring decades of experience turning scrappy concepts into funded ventures.',
-    fullTitle: 'Startup Mentorship Program',
-    fullDesc: 'Pair your founding team with battle-tested mentors who\'ve navigated the journey from napkin sketch to Series A. Structured guidance, not generic advice.',
-    features: ['1-on-1 Mentor Matching', 'Pitch Deck Clinics', 'Product-Market Fit Workshops', 'Investor Readiness Tracks'],
+    icon: 'product',
+    title: 'Product & UX Consulting',
+    shortDesc: 'From first idea to a product people love — design, engineering and AI-native development working as one team.',
+    fullTitle: 'Product & UX Consulting',
+    fullDesc: 'Design and development services that take your idea from napkin sketch to shipped product. Design, engineering and AI work as one team, so concepts become working software, not slide decks.',
+    features: ['User Research & Interface Design', 'Design Systems & Front-end Engineering', 'MVP & Full-stack Product Development', 'AI-Native Features & Copilots'],
+    groups: [
+      { title: 'UX/UI Design', items: ['User Research & Testing', 'Interface Design', 'Prototyping & Wireframing'] },
+      { title: 'Design Engineering', items: ['Design Systems & Component Libraries', 'Front-end Architecture & Performance', 'Accessibility Engineering'] },
+      { title: 'Product Development', items: ['Product Strategy', 'MVP Development', 'Full-stack Solutions'] },
+      { title: 'AI-Native Product Development', items: ['AI-First Product Discovery', 'LLM-Powered Features & Copilots', 'Evaluation & Responsible AI'] },
+    ],
     color1: COLORS.coral,
     color2: COLORS.amber,
     bg: '#FFF5F0',
@@ -70,12 +76,18 @@ export const SERVICES = [
     bg: '#F0FFF8',
   },
   {
-    icon: 'consulting',
-    title: 'Innovation Consulting',
-    shortDesc: 'Audit your innovation readiness. Design the programs, culture, and processes that turn your organization into an idea engine.',
-    fullTitle: 'Innovation Consulting & Strategy',
-    fullDesc: 'A deep-dive assessment of your innovation capacity, followed by a custom playbook. We identify blockers, design systems, and measure what matters.',
-    features: ['Innovation Readiness Audit', 'Custom Playbook Design', 'Culture Transformation', 'KPI Framework Development'],
+    icon: 'entrepreneurship',
+    title: 'Entrepreneurship Support',
+    shortDesc: 'Expert guidance for startups and innovators — from business model and go-to-market to IP, research and investor readiness.',
+    fullTitle: 'Entrepreneurship Support',
+    fullDesc: 'Expert guidance for startups and innovators. We help founders shape the business model, protect what they build and get ready for investors — with practical, structured support at every stage from first incubation to launch.',
+    features: ['Business Model & Go-to-Market', 'Pitch Deck & Investor Readiness', 'IP & Patent Guidance', 'Mentor & Investor Networks'],
+    groups: [
+      { title: 'Incubation Support', items: ['Business Model Development', 'Go-to-Market Strategy', 'Pitch Deck Creation', 'Investor Readiness'] },
+      { title: 'IP & Research', items: ['Intellectual Property Guidance', 'Patent Filing Support', 'Academic Research Publications', 'Technical Documentation'] },
+      { title: 'Mentorship & Networks', items: ['1-on-1 Mentor Matching', 'Industry & Investor Introductions', 'Founder Peer Circles', 'Demo Day Access'] },
+      { title: 'Funding & Growth', items: ['Grant & Funding Applications', 'Startup Programme Applications', 'Financial Planning Basics', 'Growth Strategy'] },
+    ],
     color1: COLORS.amber,
     color2: COLORS.coral,
     bg: '#FFFBF0',
@@ -257,9 +269,9 @@ export const YOUTUBE_SERIES = [
 export const INTEREST_OPTIONS = [
   { value: 'general', label: 'General Inquiry' },
   { value: 'training', label: 'Training & Workshops' },
-  { value: 'mentorship', label: 'Startup Mentorship' },
+  { value: 'product', label: 'Product & UX Consulting' },
   { value: 'partnership', label: 'Strategic Partnerships' },
-  { value: 'consulting', label: 'Innovation Consulting' },
+  { value: 'entrepreneurship', label: 'Entrepreneurship Support' },
 ];
 
 /* Reels published on the public @inno_mission Instagram profile.
@@ -272,3 +284,29 @@ export const INSTAGRAM_REELS = [
   'DVTM999gnZi',
   'DVAXBLSglO6',
 ];
+
+
+/* ── Team ──
+   Add `url` (LinkedIn or personal site) to show a "Connect" button, and `photo`
+   (e.g. '/media/team/ganesh.jpg') to show a photo instead of initials. */
+export const TEAM = {
+  advisory: [
+    { name: 'Ganesh Malthurkar', url: 'https://www.linkedin.com/in/ganeshmalthurkar/', photo: '' },
+    { name: 'Dr. Divakar Sadam', url: 'https://www.linkedin.com/in/dr-divakar-sadam-15065638/', photo: '' },
+    { name: 'Tej Chauhan', url: 'https://www.linkedin.com/in/tejj/', photo: '' },
+    { name: 'Akshay Kulkarni', url: 'https://www.linkedin.com/in/akki4design/', photo: '' },
+    { name: 'Eswar Reddy', url: 'https://www.linkedin.com/in/eswar-reddy-ux/', photo: '' },
+    { name: 'Suryaprakash Musunuri', url: 'https://www.linkedin.com/in/suryaprakashmusunuri/', photo: '' },
+  ],
+};
+
+/* "Dr. Divakar Sadam" -> "DS" (honorifics are skipped) */
+export const initialsOf = (name) =>
+  name
+    .replace(/^(dr|mr|mrs|ms|prof)\.?\s+/i, '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();

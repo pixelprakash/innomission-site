@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { ABOUT_VALUES, PROCESS_STEPS, TRUST_PARTNERS } from '../../utils/constants';
+import { ABOUT_VALUES, PROCESS_STEPS, TRUST_PARTNERS, TEAM, initialsOf } from '../../utils/constants';
 import { Accent, Button, Media, PageHero, Reveal, SectionHead } from '../ui';
 
 export default function About() {
@@ -52,7 +52,34 @@ export default function About() {
         </div>
       </section>
 
-      <section id="partners" className="rd-section">
+      <section id="team" className="rd-section">
+        <div className="rd-wrap">
+          <Reveal>
+            <SectionHead align="center" title={<>Meet our <Accent tone="teal">team</Accent></>} />
+          </Reveal>
+          <h3 className="rd-team__group">Advisory Board</h3>
+          <ul className="rd-team">
+            {TEAM.advisory.map((m, i) => (
+              <Reveal as="li" key={m.name} delay={(i % 3) * 0.06}>
+                <article className="rd-person">
+                  <div className="rd-avatar" aria-hidden={m.photo ? undefined : 'true'}>
+                    {m.photo ? <img src={m.photo} alt={m.name} loading="lazy" /> : initialsOf(m.name)}
+                  </div>
+                  <h4>{m.name}</h4>
+                  {m.url && (
+                    <a className="rd-btn rd-btn--outline" href={m.url} target="_blank" rel="noopener noreferrer" aria-label={`Connect with ${m.name} (opens in a new tab)`}>
+                      Connect
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M9 2h5v5M14 2L7 9M12 10v3a1 1 0 01-1 1H3a1 1 0 01-1-1V5a1 1 0 011-1h3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </a>
+                  )}
+                </article>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="partners" className="rd-section rd-section--cream2">
         <div className="rd-wrap">
           <Reveal>
             <SectionHead title={<>Institutions we work <Accent>alongside</Accent></>} />
