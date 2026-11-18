@@ -10,8 +10,8 @@
   padding: 8px 14px;
   border-radius: 999px;
   background: #16111c;
-  color: rgba(255, 255, 255, 0.6);
-  font: 600 12px/1 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: rgba(255, 255, 255, 0.78);
+  font: 600 14px/1 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: 0.02em;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -26,7 +26,7 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  background: #4b4556;
+  background: #7d7488;
   transition: background 0.25s ease;
 }
 .ds-track[aria-checked='true'] { background: #ec6b56; }

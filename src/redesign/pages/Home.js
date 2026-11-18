@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { SERVICES, PROGRAMS, TRUST_PARTNERS, YOUTUBE_SERIES, INSTAGRAM_REELS, SOCIAL_LINKS } from '../../utils/constants';
 import { slug } from '../data';
 import { Accent, ArrowLink, Button, Media, ReelEmbed, Reveal, SectionHead, Swirl } from '../ui';
+import HeroArt from '../HeroArt';
 
 const PILLARS = [
-  { id: 'learning', eyebrow: 'Learning', text: 'Explore practical, rigorous programs that turn bold thinking into repeatable results.', cta: 'View our programs', to: '/programs', tone: 'coral' },
-  { id: 'insight', eyebrow: 'Insight', text: 'Access conversations and case studies that shape your practice and challenge assumptions.', cta: 'Visit the library', to: '/insights', tone: 'mint' },
-  { id: 'connection', eyebrow: 'Connection', text: 'Join a community bridging academia, industry and government — to learn, share and lead together.', cta: 'Work with us', to: '/contact', tone: 'plum' },
+  { id: 'inspire', title: 'Inspire', text: 'Spark new mindsets through stories, conversations and ideas from innovators — shared across our videos, reels and posts.', cta: 'Explore our insights', to: '/insights', tone: 'coral' },
+  { id: 'innovate', title: 'Innovate', text: 'Turn ideas into solutions through design thinking, hands-on workshops and mentorship that build real capability.', cta: 'View our programs', to: '/programs', tone: 'mint' },
+  { id: 'implement', title: 'Implement', text: 'Take solutions into the real world with strategic partnerships, consulting and ecosystem support that lasts.', cta: 'See our services', to: '/services', tone: 'plum' },
 ];
 
 export default function Home() {
@@ -21,10 +22,9 @@ export default function Home() {
         <div className="rd-wrap">
           <div className="rd-hero__top">
             <Reveal>
-              <h1 className="rd-h1">
-                Shaping the future
-                <br />
-                <Accent>of open innovation</Accent>
+              <h1 className="rd-h1 rd-lines">
+                <span className="rd-line"><span>Shaping the future</span></span>
+                <span className="rd-line"><span style={{ animationDelay: '0.12s' }}><Accent>of open innovation</Accent></span></span>
               </h1>
             </Reveal>
             <Reveal delay={0.1} className="rd-hero__aside">
@@ -35,7 +35,9 @@ export default function Home() {
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <Media slot="hero" alt="Colleagues discussing ideas around a project board" ratio="16 / 8" tone="coral" className="rd-hero__media" />
+            <Media slot="hero" alt="An InnoMission workshop: participants in group discussion while a facilitator addresses the room" ratio="21 / 9" tone="coral" className="rd-hero__media">
+              {({ own }) => (own ? <HeroArt /> : <Swirl variant="a" className="rd-hero__swirl" />)}
+            </Media>
           </Reveal>
         </div>
       </section>
@@ -108,8 +110,8 @@ export default function Home() {
             {PILLARS.map((p, i) => (
               <Reveal key={p.id} delay={i * 0.08}>
                 <Link to={p.to} className="rd-pillar">
-                  <Media slot={p.id} alt="" ratio="4 / 3" tone={p.tone} />
-                  <h3 className="rd-pillar__title">{p.eyebrow}</h3>
+                  <Media slot={`pillar-${p.id}`} alt="" ratio="4 / 3" tone={p.tone} />
+                  <h3 className="rd-pillar__title">{p.title}</h3>
                   <p>{p.text}</p>
                   <span className="rd-arrowlink"><span>{p.cta}</span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>
                 </Link>
@@ -138,7 +140,7 @@ export default function Home() {
                   <dl className="rd-card__meta">
                     <div><dt>Duration</dt><dd>{p.duration}</dd></div>
                   </dl>
-                  <ArrowLink to="/programs">Read more</ArrowLink>
+                  <ArrowLink to="/programs">Read more<span className="sr-only"> about {p.title}</span></ArrowLink>
                 </article>
               </Reveal>
             ))}
@@ -223,7 +225,7 @@ export default function Home() {
                 <p className="rd-body">{YOUTUBE_SERIES[0].desc}</p>
                 <ArrowLink to="/insights">Read more about our insights</ArrowLink>
               </div>
-              <Media slot="insight" alt="" ratio="4 / 3" tone="coral" />
+              <Media slot="insight" alt="A participant speaking into a microphone at an event" ratio="4 / 3" tone="coral" />
             </div>
           </Reveal>
         </div>

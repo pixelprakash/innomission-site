@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useInView } from '../hooks';
-import { MEDIA, STOCK } from './media';
+import { MEDIA, MEDIA_POS, STOCK } from './media';
 
 /* Two-tone headline accent (serif, coloured) */
 export const Accent = ({ children, tone = 'coral' }) => (
@@ -79,7 +79,7 @@ export const Swirl = ({ variant = 'a', className = '' }) => {
  */
 export const Media = ({ slot, alt = '', ratio = '4 / 3', tone = 'coral', className = '', rounded = true, children }) => {
   // sources tried in order: your own file → stock photo → placeholder
-  const sources = [MEDIA[slot] && { src: MEDIA[slot] }, STOCK[slot]].filter(Boolean);
+  const sources = [MEDIA[slot] && { src: MEDIA[slot], pos: MEDIA_POS[slot] }, STOCK[slot]].filter(Boolean);
   const [idx, setIdx] = useState(0);
   const current = sources[idx];
   return (
@@ -104,7 +104,7 @@ export const Media = ({ slot, alt = '', ratio = '4 / 3', tone = 'coral', classNa
           )}
         </>
       )}
-      {children}
+      {typeof children === 'function' ? children({ own: !!current && idx === 0 && !!MEDIA[slot] }) : children}
     </div>
   );
 };
@@ -120,6 +120,7 @@ export const SectionHead = ({ title, intro, align = 'left', id }) => (
 /* Page hero used on inner pages */
 export const PageHero = ({ title, intro, children }) => (
   <section className="rd-pagehero">
+    <Swirl variant="c" className="rd-pagehero__art" />
     <div className="rd-wrap">
       <Reveal>
             <h1 className="rd-h1 rd-h1--page">{title}</h1>

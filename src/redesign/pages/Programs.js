@@ -37,7 +37,7 @@ export default function Programs() {
                   <ul className="rd-card__outcomes">
                     {p.outcomes.map((o) => <li key={o}>{o}</li>)}
                   </ul>
-                  <Button to="/contact" variant="outline">Enquire</Button>
+                  <Button to="/contact" variant="outline">Enquire<span className="sr-only"> about {p.title}</span></Button>
                 </article>
               </Reveal>
             ))}

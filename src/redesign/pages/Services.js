@@ -30,7 +30,7 @@ export default function Services() {
               <ul className="rd-checklist">
                 {s.features.map((f) => <li key={f}>{f}</li>)}
               </ul>
-              <Button to="/contact">Enquire about this service</Button>
+              <Button to="/contact">Enquire about this service<span className="sr-only">: {s.title}</span></Button>
             </Reveal>
             <Reveal delay={0.1} className="rd-split__media">
               <Media slot={`service-${['training', 'mentorship', 'partnership', 'consulting'][i]}`} alt="" ratio="4 / 3" tone={TONES[i]} />
