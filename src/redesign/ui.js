@@ -85,7 +85,7 @@ export const Media = ({ slot, alt = '', ratio = '4 / 3', tone = 'coral', classNa
   return (
     <div
       className={`rd-media rd-media--${tone} ${rounded ? 'is-rounded' : ''} ${className}`}
-      style={{ aspectRatio: ratio }}
+      style={{ '--ar': ratio }}
     >
       {current ? (
         <img
