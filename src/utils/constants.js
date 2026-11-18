@@ -29,10 +29,9 @@ export const NAV_ITEMS = [
 
 export const TRUST_PARTNERS = [
   'IIT Hyderabad',
-  'IIIT Hyderabad',
   'T-Hub',
-  'TASK',
-  'JNTU',
+  'TSAA',
+  'JNAFU',
 ];
 
 export const SERVICES = [
