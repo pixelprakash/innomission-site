@@ -291,22 +291,24 @@ export const INSTAGRAM_REELS = [
    (e.g. '/media/team/ganesh.jpg') to show a photo instead of initials. */
 export const TEAM = {
   advisory: [
-    { name: 'Ganesh Malthurkar', url: 'https://www.linkedin.com/in/ganeshmalthurkar/', photo: '' },
+    { name: 'Ganesh Kumar Malthurkar', url: 'https://www.linkedin.com/in/ganeshmalthurkar/', photo: '' },
     { name: 'Dr. Divakar Sadam', url: 'https://www.linkedin.com/in/dr-divakar-sadam-15065638/', photo: '' },
-    { name: 'Tej Chauhan', url: 'https://www.linkedin.com/in/tejj/', photo: '' },
-    { name: 'Akshay Kulkarni', url: 'https://www.linkedin.com/in/akki4design/', photo: '' },
+    { name: 'Ravi Tej', url: 'https://www.linkedin.com/in/tejj/', photo: '' },
+    { name: 'Akkireddy (Akki) Prakash', url: 'https://www.linkedin.com/in/akki4design/', photo: '' },
     { name: 'Eswar Reddy', url: 'https://www.linkedin.com/in/eswar-reddy-ux/', photo: '' },
-    { name: 'Suryaprakash Musunuri', url: 'https://www.linkedin.com/in/suryaprakashmusunuri/', photo: '' },
+    { name: 'Surya Prakash Musunuri', url: 'https://www.linkedin.com/in/suryaprakashmusunuri/', photo: '' },
   ],
 };
 
-/* "Dr. Divakar Sadam" -> "DS" (honorifics are skipped) */
-export const initialsOf = (name) =>
-  name
+/* First + last initial; honorifics and (nicknames) are ignored:
+   "Dr. Divakar Sadam" -> "DS", "Akkireddy (Akki) Prakash" -> "AP" */
+export const initialsOf = (name) => {
+  const words = name
+    .replace(/\([^)]*\)/g, '')
     .replace(/^(dr|mr|mrs|ms|prof)\.?\s+/i, '')
     .split(/\s+/)
-    .filter(Boolean)
-    .map((w) => w[0])
-    .slice(0, 2)
-    .join('')
-    .toUpperCase();
+    .filter(Boolean);
+  const first = words[0] || '';
+  const last = words.length > 1 ? words[words.length - 1] : '';
+  return (first[0] + (last[0] || '')).toUpperCase();
+};
