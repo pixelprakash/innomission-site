@@ -1,7 +1,12 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Nav, Footer, SkipLink } from './components';
 import { COLORS } from './utils/constants';
+import { DesignProvider, useDesign } from './design/DesignContext';
+import DesignSwitch from './design/DesignSwitch';
+
+/* Redesign is code-split so visitors on the current design never download it */
+const RedesignApp = lazy(() => import('./redesign/RedesignApp'));
 
 /* ── Lazy-loaded pages (code splitting) ── */
 const HomePage = lazy(() => import('./pages/Home'));
@@ -56,12 +61,11 @@ function PageLoader() {
   );
 }
 
-/* ── App Layout ── */
-export default function App() {
+/* ── Current site layout (unchanged) ── */
+function CurrentSite() {
   return (
-    <BrowserRouter>
+    <>
       <SkipLink />
-      <ScrollToTop />
       <Nav />
       <Suspense fallback={<PageLoader />}>
         <Routes>
@@ -71,10 +75,40 @@ export default function App() {
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
+          {/* the redesign calls this page /insights; keep switching between variants seamless */}
+          <Route path="/insights" element={<Navigate to="/blogs" replace />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </Suspense>
       <Footer />
-    </BrowserRouter>
+    </>
+  );
+}
+
+/* ── App: picks the design variant (A/B) ── */
+function DesignRouter() {
+  const { isRedesign } = useDesign();
+  return (
+    <>
+      {isRedesign ? (
+        <Suspense fallback={<PageLoader />}>
+          <RedesignApp />
+        </Suspense>
+      ) : (
+        <CurrentSite />
+      )}
+      <DesignSwitch />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <DesignProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <DesignRouter />
+      </BrowserRouter>
+    </DesignProvider>
   );
 }

@@ -261,3 +261,14 @@ export const INTEREST_OPTIONS = [
   { value: 'partnership', label: 'Strategic Partnerships' },
   { value: 'consulting', label: 'Innovation Consulting' },
 ];
+
+/* Reels published on the public @inno_mission Instagram profile.
+   Add or remove shortcodes (the part after /reel/ in the URL) to change what's shown. */
+export const INSTAGRAM_REELS = [
+  'DVi_xYxggFJ',
+  'DVVDjLJgrVq',
+  'DVVDLhaAhpi',
+  'DVVCb1cAlzS',
+  'DVTM999gnZi',
+  'DVAXBLSglO6',
+];
