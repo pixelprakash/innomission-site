@@ -319,7 +319,8 @@ html[data-design='redesign'] body { background: #fff9f3; }
 .rd-rowhead .rd-sechead { margin: 0; }
 
 /* ═════════ FOOTER ═════════ */
-.rd-footer { background: var(--rd-plum); color: #fff; margin-top: clamp(32px, 6vw, 80px); padding: clamp(44px, 8vw, 112px) 0 calc(88px + env(safe-area-inset-bottom)); }  /* bottom space keeps the A/B switch off the footer text */
+.rd-footer { background: var(--rd-plum); color: #fff; margin-top: clamp(32px, 6vw, 80px); padding: clamp(44px, 8vw, 112px) 0 calc(32px + env(safe-area-inset-bottom)); }
+html[data-ab='on'] .rd-footer { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }  /* keeps the A/B switch off the footer text */
 .rd-footer__cta { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 24px; padding-bottom: clamp(32px, 6vw, 72px); border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
 .rd-footer__cta .rd-h2 { max-width: 20ch; }
 .rd-footer__ctatext { color: rgba(255, 255, 255, 0.85); font-size: 1.125rem; max-width: 56ch; margin-top: 20px; }

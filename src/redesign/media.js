@@ -21,20 +21,15 @@ export const MEDIA_POS = {
   hero: '50% 50%',   // must stay centred — HeroArt is aligned to this
 };
 
+/* Only list files that exist in /public/media — each listed path is requested
+   before the stock fallback, so an entry for a missing file costs a failed request.
+   To use your own photo for a spot: put it in public/media/ and add a line here,
+   e.g.  'pillar-inspire': '/media/pillar-inspire.jpg'
+   Spots: hero · intro · featured · insight · pillar-inspire · pillar-innovate ·
+   pillar-implement · about · service-training · service-product ·
+   service-partnership · service-entrepreneurship */
 export const MEDIA = {
   hero: '/media/hero.webp',
-  intro: '/media/intro.jpg',
-  featured: '/media/featured.jpg',
-  insight: '/media/insight.jpg',   // featured insight block on the home page
-  'pillar-inspire': '/media/pillar-inspire.jpg',
-  'pillar-innovate': '/media/pillar-innovate.jpg',
-  'pillar-implement': '/media/pillar-implement.jpg',
-  about: '/media/about.jpg',
-  contact: '/media/contact.jpg',
-  'service-training': '/media/service-training.jpg',
-  'service-product': '/media/service-product.jpg',
-  'service-partnership': '/media/service-partnership.jpg',
-  'service-entrepreneurship': '/media/service-entrepreneurship.jpg',
 };
 
 

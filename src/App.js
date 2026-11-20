@@ -87,7 +87,7 @@ function CurrentSite() {
 
 /* ── App: picks the design variant (A/B) ── */
 function DesignRouter() {
-  const { isRedesign } = useDesign();
+  const { isRedesign, showSwitch } = useDesign();
   return (
     <>
       {isRedesign ? (
@@ -97,7 +97,7 @@ function DesignRouter() {
       ) : (
         <CurrentSite />
       )}
-      <DesignSwitch />
+      {showSwitch && <DesignSwitch />}
     </>
   );
 }
